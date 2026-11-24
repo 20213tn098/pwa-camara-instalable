@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.encabezado {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.encabezado h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.subtitulo {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.tarjeta {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.tarjeta-ios {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-color: #38bdf8;
+  font-size: 0.85rem;
+}
+
+.tarjeta-ios strong {
+  color: #38bdf8;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tarjeta-ios p {
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.icono-ios {
+  font-size: 1.6rem;
+}
+
+.simbolo-ios {
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.seccion-camara {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contenedor-visor {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #020617;
+  border: 2px solid #334155;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+#visor-camara {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+#visor-camara.activo {
+  display: block;
+}
+
+.placeholder-camara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.icono-placeholder {
+  font-size: 2.5rem;
+}
+
+.placeholder-camara.oculto {
+  display: none;
+}
+
+.estado {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.estado.inactiva {
+  background-color: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+
+.estado.activa {
+  background-color: #064e3b;
+  color: #6ee7b7;
+  border: 1px solid #059669;
+}
+
+.estado.cargando {
+  background-color: #1e3a5f;
+  color: #7dd3fc;
+  border: 1px solid #0284c7;
+}
+
+.estado.error {
+  background-color: #450a0a;
+  color: #fca5a5;
+  border: 1px solid #dc2626;
+}
+
+.tarjeta-permiso {
+  background: linear-gradient(135deg, #1e293b 0%, #1e1b4b 100%);
+  border-color: #6366f1;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
+}
+
+.tarjeta-permiso h3 {
+  font-size: 1rem;
+  color: #a5b4fc;
+  margin-bottom: 8px;
+}
+
+.tarjeta-permiso p {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.tarjeta-permiso strong {
+  color: #f8fafc;
+}
+
+.acciones-permiso {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease, opacity 0.15s ease;
+  user-select: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primario {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+.btn-primario:hover:not(:disabled) {
+  background-color: #0369a1;
+}
+
+.btn-secundario {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.btn-secundario:hover:not(:disabled) {
+  background-color: #475569;
+}
+
+.btn-peligro {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-peligro:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.btn-instalar {
+  background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+}
+
+.btn-instalar:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #4f46e5 100%);
+}
